@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+    <style>
+        form{
+            margin-left: 50px;
+            margin-top:50px ;
+        }
+    </style>
+    <script>
+    function myfunction(){
+        //Redirect to this page to another page
+        window.location.href = "secondpage.html";
+
+           //Store data using local storage
+        var d = document.getElementById('liitem').value;
+        var num = document.getElementById('demo1').value;
+
+        localStorage.setItem("textvalue",d);
+        localStorage.setItem("textnumber",num)
+        
+    }
+    </script>
+</head>
+<body>
+     <form> 
+         <h2>Redirected from one page to another page</h2>
+        Items : <select name="Menu">
+            <option value="listitem" id="liitem">li</option>
+            <option value="anchor" id="anchor">anchor</option>
+            <option value="cards" id="card">cards</option>
+        </select><br><br>
+        Number :<input type="number" id="demo1"><br><br>
+        <input type="button" value="Submit" id="btn" onclick="myfunction();" target="blank">
+     </form> 
+</body>
+</html>
